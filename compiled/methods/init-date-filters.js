@@ -80,8 +80,8 @@ module.exports = function () {
 
       if (!that.vuex) that.query = query;
 
-      picker.setStartDate(moment());
-      picker.setEndDate(moment());
+      picker.setStartDate(that.opts.moment());
+      picker.setEndDate(that.opts.moment());
 
       that.updateState('query', query);
 
