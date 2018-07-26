@@ -113,8 +113,8 @@ function foundMatch(query, value, isListFilter) {
   // Date range
 
   if (is_valid_moment_object(value)) {
-    var start = moment(query.start, 'YYYY-MM-DD HH:mm:ss');
-    var end = moment(query.end, 'YYYY-MM-DD HH:mm:ss');
+    var start = this.opts.moment(query.start, 'YYYY-MM-DD HH:mm:ss');
+    var end = this.opts.moment(query.end, 'YYYY-MM-DD HH:mm:ss');
 
     return value >= start && value <= end;
   }
