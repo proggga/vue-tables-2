@@ -148,6 +148,9 @@ exports.install = function (Vue, globalOptions, useVuex) {
           this.activeState = true;
           return;
         }
+        if (!this.opts.moment) {
+            this.opts.moment = moment
+        }
 
         var state = JSON.parse(this.storage.getItem(this.stateKey));
 

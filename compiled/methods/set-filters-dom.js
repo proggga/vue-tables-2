@@ -14,8 +14,8 @@ module.exports = function (query) {
 
       if (this.isDateFilter(column)) {
         if (query[column] && _typeof(query[column]) === 'object') {
-          var start = typeof query[column].start === 'string' ? moment(query[column].start, 'YYYY-MM-DD') : query[column].start;
-          var end = typeof query[column].end === 'string' ? moment(query[column].end, 'YYYY-MM-DD') : query[column].end;
+          var start = typeof query[column].start === 'string' ? this.opts.moment(query[column].start, 'YYYY-MM-DD') : query[column].start;
+          var end = typeof query[column].end === 'string' ? this.opts.moment(query[column].end, 'YYYY-MM-DD') : query[column].end;
 
           this._setDatepickerText(column, start, end);
         } else {
